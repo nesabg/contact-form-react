@@ -7,7 +7,7 @@ function Select({ data, labelText }) {
       <label htmlFor="labelText">{labelText}:</label>
       <select id={labelText} name={labelText}>
         {data.map((e) => {
-          return <Option id={e.id} value={e.name} />;
+          return <Option key={e.id} value={e.name} />;
         })}
       </select>
     </div>

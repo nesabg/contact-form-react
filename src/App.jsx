@@ -1,6 +1,7 @@
 import "./App.css";
 import InputField from "./models/InputField";
 import Select from "./models/Select";
+import Textarea from "./models/Textarea";
 
 function App() {
   const listProgramingLangs = [
@@ -24,6 +25,7 @@ function App() {
         placeholder="Ivan Ivanov"
       />
       <Select labelText="Programmin languages" data={listProgramingLangs}/>
+      <Textarea labelText="Message" />
     </div>
   );
 }
