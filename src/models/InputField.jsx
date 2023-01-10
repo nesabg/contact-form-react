@@ -5,7 +5,7 @@ function InputField({ inputType, inputLabel, placeholder }) {
   return (
     <div>
       <label htmlFor={inputLabel}>{inputLabel}: </label>
-      <input id={inputLabel} type={inputType} placeholder={placeholder} />
+      <input id={inputLabel} type={inputType} placeholder={placeholder} name={inputLabel}/>
     </div>
   );
 }
