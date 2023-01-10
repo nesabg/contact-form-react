@@ -1,12 +1,18 @@
 import React from "react";
 
-function Textarea({labelText}) {
+function Textarea({ labelText, value, onChangeFunc }) {
   return (
     <div>
-    <label htmlFor={labelText}>{labelText}</label>
-    <textarea id={labelText} name={labelText} rows="4" cols="50">
-
-    </textarea>
+      <label htmlFor={labelText}>{labelText}</label>
+      <textarea
+        onChange={(e) => onChangeFunc(e.target.value)}
+        id={labelText}
+        name={labelText}
+        value={value}
+        rows="4"
+        cols="50"
+      >
+      </textarea>
     </div>
   );
 }
