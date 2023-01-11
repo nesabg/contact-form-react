@@ -50,6 +50,7 @@ function App() {
           placeholder="Ivan Ivanov"
           value={name}
           onChangeFunc={setName}
+          validationMsg="Name must be between 3 and 20 characters"
         />
         <InputField
           inputType="email"
@@ -57,6 +58,7 @@ function App() {
           placeholder="test@nex-gen.eu"
           value={email}
           onChangeFunc={setEmail}
+          validationMsg="It`s not valid email address"
         />
         <InputField
           inputType="password"
@@ -64,6 +66,7 @@ function App() {
           placeholder="**********"
           value={password}
           onChangeFunc={setPassword}
+          validationMsg="Password must be between 5 and 17 characters"
         />
         <InputField
           inputType="number"
@@ -71,6 +74,7 @@ function App() {
           placeholder="+359 888 888 888"
           value={phone}
           onChangeFunc={setPhone}
+          validationMsg="Number must start with 359"
         />
         <Select
           labelText="Languages"

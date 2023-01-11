@@ -93,6 +93,10 @@ input::placeholder{
 
 .error {
   color: red;
+  vertical-align: top;
+  margin-top: 5px;
+  display: inline-block;
+  border-bottom: 1px dashed red;
 }
 
 label {
