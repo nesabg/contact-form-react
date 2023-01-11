@@ -25,14 +25,19 @@ function App() {
   const [disabled, setDisabled] = useState(true);
 
   useEffect(() => {
-    if(name.length > 1 && email.length > 1 && password.length > 1 && phone.length > 1 && pLang.length > 1 && message.length > 1 ){
-      setDisabled(false)
-      console.log(disabled)
-    }else{
-      setDisabled(true)
-      console.log(disabled)
+    if (
+      name.length > 1 &&
+      email.length > 1 &&
+      password.length > 1 &&
+      phone.length > 1 &&
+      pLang.length > 1 &&
+      message.length > 1
+    ) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
     }
-  },[name, email, password, phone, pLang, message])
+  }, [name, email, password, phone, message]);
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -96,7 +101,7 @@ function App() {
           value={message}
           onChangeFunc={setMessage}
         />
-        <SubmitBtn submitValue="submit" disabled={disabled}/>
+        <SubmitBtn submitValue="submit" disabled={disabled} />
       </form>
     </div>
   );
