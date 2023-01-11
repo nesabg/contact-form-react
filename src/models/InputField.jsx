@@ -7,9 +7,9 @@ function InputField({
   placeholder,
   value,
   onChangeFunc,
-  validationMsg
+  validationMsg,
 }) {
-  
+  //Validation of textarea
   const isValid = validation(inputLabel, value, validationMsg);
 
   return (
@@ -26,7 +26,10 @@ function InputField({
           onChangeFunc(e.target.value);
         }}
       />
-      {(value.length > 0) & isValid?.err ? <span className="error">{isValid.message}</span> : null}
+      {/*Show error message if fields is not valid */}
+      {(value.length > 0) & isValid?.err ? (
+        <span className="error">{isValid.message}</span>
+      ) : null}
     </div>
   );
 }
