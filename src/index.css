@@ -85,6 +85,11 @@ input[type="submit"] {
   font-weight: 400;
   border-radius: 5px;
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+input[type="submit"]:disabled {
+  cursor: not-allowed;
 }
 
 input::placeholder{
