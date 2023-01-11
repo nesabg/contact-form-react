@@ -4,6 +4,7 @@ import Select from "./models/Select";
 import Textarea from "./models/Textarea";
 import SubmitBtn from "./models/SubmitBtn";
 import sendRequest from "./controllers/sendRequest";
+import { validation } from "./controllers/validation";
 
 const listProgramingLangs = [
   { id: 1, name: "Javascript" },
@@ -22,6 +23,7 @@ function App() {
   const [phone, setPhone] = useState("");
   const [pLang, setPlang] = useState("Javascript");
   const [message, setMessage] = useState("");
+  const [disabled, setDisabled] = useState(true);
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -71,17 +73,17 @@ function App() {
           onChangeFunc={setPhone}
         />
         <Select
-          labelText="Programmin languages"
+          labelText="Languages"
           defaultLang={pLang}
           data={listProgramingLangs}
           onChangeFunc={setPlang}
         />
         <Textarea
-          labelText="Message"
+          labelText="Message: "
           value={message}
           onChangeFunc={setMessage}
         />
-        <SubmitBtn submitValue="submit" />
+        <SubmitBtn submitValue="submit" disabled={disabled}/>
       </form>
     </div>
   );

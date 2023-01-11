@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { validation } from "../controllers/validation";
 
 function InputField({
   inputType,
@@ -7,6 +8,8 @@ function InputField({
   value,
   onChangeFunc,
 }) {
+  const isValid = validation(inputLabel, value, "This field is not valid");
+
   return (
     <div>
       <label htmlFor={inputLabel}>{inputLabel}: </label>
@@ -21,6 +24,7 @@ function InputField({
           onChangeFunc(e.target.value);
         }}
       />
+      {(value.length > 0) & isValid?.err ? <span className="error">{isValid.message}</span> : null}
     </div>
   );
 }
