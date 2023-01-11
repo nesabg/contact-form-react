@@ -1,6 +1,13 @@
-import React from "react";
+import React, { isValidElement } from "react";
+import { validation } from "../controllers/validation";
 
 function Textarea({ labelText, value, onChangeFunc }) {
+  const isValid = validation(
+    "Message",
+    value,
+    "Message must be between 32 and 2000 characters"
+  );
+
   return (
     <div className="textarea">
       <label htmlFor={labelText}>{labelText}</label>
@@ -11,8 +18,8 @@ function Textarea({ labelText, value, onChangeFunc }) {
         value={value}
         rows="4"
         cols="50"
-      >
-      </textarea>
+      ></textarea>
+      {(value.length > 0) & isValid?.err ? <span className="error">{isValid.message}</span> : null}
     </div>
   );
 }

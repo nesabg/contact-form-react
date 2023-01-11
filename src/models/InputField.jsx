@@ -7,8 +7,9 @@ function InputField({
   placeholder,
   value,
   onChangeFunc,
+  validationMsg
 }) {
-  const isValid = validation(inputLabel, value, "This field is not valid");
+  const isValid = validation(inputLabel, value, validationMsg);
 
   return (
     <div>
