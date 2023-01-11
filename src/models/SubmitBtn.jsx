@@ -1,9 +1,9 @@
 import React from "react";
 
-function SubmitBtn({ submitValue }) {
+function SubmitBtn({ submitValue, disabled }) {
   return (
     <div>
-      <input type="submit" value={submitValue} />
+      <input type="submit" value={submitValue} disabled={disabled} />
     </div>
   );
 }

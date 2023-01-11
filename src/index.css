@@ -1,6 +1,6 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: montserrat, Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 18px;
   line-height: 24px;
   font-weight: 400;
 
@@ -27,14 +27,18 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-size: 16px;
+  justify-content: center;
+  background: linear-gradient(-60deg, aqua, blue);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: white;
+  text-align: center;
 }
 
 button {
@@ -54,6 +58,68 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+option {
+  background-color: blue;
+}
+
+input, textarea, select {
+  width: 300px;
+  margin: 5px;
+  padding: 7px 10px;
+  color: whitesmoke;
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+select {
+  width: 322px;
+}
+
+input[type="submit"] {
+  width: 130px;
+  padding: 5px 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+input::placeholder{
+  color: #d2d1d3;
+}
+
+.error {
+  color: red;
+}
+
+label {
+  min-width: 100px;
+  margin-right: 5px;
+  display: inline-block;
+  color: white;
+  font-weight: bolder;
+  text-align: right;
+  vertical-align: middle;
+}
+
+form {
+  width: 1000px;
+  padding-left: 200px;
+}
+
+form div:last-child {
+  width: 700px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid white;
+  text-align: left;
+}
+
+.textarea label{
+  vertical-align: top;
 }
 
 @media (prefers-color-scheme: light) {

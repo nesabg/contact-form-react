@@ -2,7 +2,7 @@ import React from "react";
 
 function Textarea({ labelText, value, onChangeFunc }) {
   return (
-    <div>
+    <div className="textarea">
       <label htmlFor={labelText}>{labelText}</label>
       <textarea
         onChange={(e) => onChangeFunc(e.target.value)}
