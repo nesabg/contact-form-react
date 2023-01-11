@@ -14,6 +14,7 @@ function Textarea({ labelText, value, onChangeFunc }) {
     <div className="textarea">
       <label htmlFor={labelText}>{labelText}</label>
       <textarea
+        aria-label="Textarea"
         onChange={(e) => onChangeFunc(e.target.value)}
         id={labelText}
         name={labelText}

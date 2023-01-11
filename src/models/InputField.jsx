@@ -16,6 +16,7 @@ function InputField({
     <div>
       <label htmlFor={inputLabel}>{inputLabel}: </label>
       <input
+        aria-label="text-input"
         id={inputLabel}
         type={inputType}
         placeholder={placeholder}
