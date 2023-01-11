@@ -9,6 +9,7 @@ function InputField({
   onChangeFunc,
   validationMsg
 }) {
+  
   const isValid = validation(inputLabel, value, validationMsg);
 
   return (

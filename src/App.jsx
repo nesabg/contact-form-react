@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InputField from "./models/InputField";
 import Select from "./models/Select";
 import Textarea from "./models/Textarea";
 import SubmitBtn from "./models/SubmitBtn";
 import sendRequest from "./controllers/sendRequest";
-import { validation } from "./controllers/validation";
 
 const listProgramingLangs = [
   { id: 1, name: "Javascript" },
@@ -24,6 +23,16 @@ function App() {
   const [pLang, setPlang] = useState("Javascript");
   const [message, setMessage] = useState("");
   const [disabled, setDisabled] = useState(true);
+
+  useEffect(() => {
+    if(name.length > 1 && email.length > 1 && password.length > 1 && phone.length > 1 && pLang.length > 1 && message.length > 1 ){
+      setDisabled(false)
+      console.log(disabled)
+    }else{
+      setDisabled(true)
+      console.log(disabled)
+    }
+  },[name, email, password, phone, pLang, message])
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
