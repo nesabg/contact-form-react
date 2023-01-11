@@ -2,6 +2,8 @@ import React, { isValidElement } from "react";
 import { validation } from "../controllers/validation";
 
 function Textarea({ labelText, value, onChangeFunc }) {
+
+  //Validation of textarea
   const isValid = validation(
     "Message",
     value,
@@ -19,6 +21,7 @@ function Textarea({ labelText, value, onChangeFunc }) {
         rows="4"
         cols="50"
       ></textarea>
+      {/*Show error message if fields is not valid */}
       {(value.length > 0) & isValid?.err ? <span className="error">{isValid.message}</span> : null}
     </div>
   );

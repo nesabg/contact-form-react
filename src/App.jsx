@@ -5,6 +5,7 @@ import Textarea from "./models/Textarea";
 import SubmitBtn from "./models/SubmitBtn";
 import sendRequest from "./controllers/sendRequest";
 
+//Dummy data for list of programming languages
 const listProgramingLangs = [
   { id: 1, name: "Javascript" },
   { id: 2, name: "Kotlin" },
@@ -12,6 +13,7 @@ const listProgramingLangs = [
   { id: 4, name: "PHP" },
 ];
 
+//Toptal temporary post bin url
 const binUrl =
   "https://www.toptal.com/developers/postbin/1673367216237-5493956936988";
 
@@ -24,6 +26,7 @@ function App() {
   const [message, setMessage] = useState("");
   const [disabled, setDisabled] = useState(true);
 
+  //Checking empty fields in form and set disabled submit button
   useEffect(() => {
     if (
       name.length > 1 &&
@@ -39,8 +42,10 @@ function App() {
     }
   }, [name, email, password, phone, message]);
 
+  //Adding function which handling submit form
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    //Send request function to send data to post bin service
     sendRequest(
       {
         name,
@@ -64,7 +69,7 @@ function App() {
           placeholder="Ivan Ivanov"
           value={name}
           onChangeFunc={setName}
-          validationMsg="Name must be between 3 and 20 characters"
+          validationMsg="Name must be between 3 and 20 characters" /*Send validation message*/
         />
         <InputField
           inputType="email"
@@ -72,7 +77,7 @@ function App() {
           placeholder="test@nex-gen.eu"
           value={email}
           onChangeFunc={setEmail}
-          validationMsg="It`s not valid email address"
+          validationMsg="It`s not valid email address" /*Send validation message*/
         />
         <InputField
           inputType="password"
@@ -80,7 +85,7 @@ function App() {
           placeholder="**********"
           value={password}
           onChangeFunc={setPassword}
-          validationMsg="Password must be between 5 and 17 characters"
+          validationMsg="Password must be between 5 and 17 characters" /*Send validation message*/
         />
         <InputField
           inputType="number"
@@ -88,7 +93,7 @@ function App() {
           placeholder="+359 888 888 888"
           value={phone}
           onChangeFunc={setPhone}
-          validationMsg="Number must start with 359"
+          validationMsg="Number must start with 359" /*Send validation message*/
         />
         <Select
           labelText="Languages"
@@ -101,7 +106,7 @@ function App() {
           value={message}
           onChangeFunc={setMessage}
         />
-        <SubmitBtn submitValue="submit" disabled={disabled} />
+        <SubmitBtn submitValue="submit" disabled={disabled} /*Disabled button if all fields are fulfilled*/ />
       </form>
     </div>
   );

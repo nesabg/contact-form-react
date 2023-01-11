@@ -12,6 +12,7 @@ function Select({ data, labelText, defaultLang, onChangeFunc }) {
         onChange={(e) => onChangeFunc(e.target.value)}
       >
         {data.map((e) => {
+          //Itereatin over passing data with id and name of programmin languages
           return <Option key={e.id} value={e.name} />;
         })}
       </select>
